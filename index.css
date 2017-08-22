@@ -28,3 +28,11 @@ html,body{width:100%;height:100%;}
 .list_box .update{color:#ff5453;}
 .news,.file,.path{font-size:18px;margin-left:6px;color:#9aa5b3;}
 .home_list .mui-scroll-wrapper{top:103px;}
+
+#agency .mui-card-content-inner{padding-bottom:0;}
+#agency .mui-card{border-radius:4px 4px 0 0;}
+#agency .mui-card-header{background-color:#16B7CA;color:#fff;}
+#agency .hospital_name{color:#2f4457;font-size:18px;}
+#agency .task{color:#2f4457;font-size:14px;}
+#agency .other_information i{font-size:16px;}
+#agency .clearance{height:10px;background-color:#F3F3F3;}
