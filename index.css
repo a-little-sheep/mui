@@ -9,7 +9,8 @@ html,body{width:100%;height:100%;}
 .home_search.mui-search.mui-active:before{top:80%;font-size:18px;}
 .home_search.mui-search .mui-placeholder .mui-icon{font-size:18px;}
 .home_search.mui-search .mui-icon-clear{font-size:18px;width:20px;height:20px;top:5px;right:5px;}
-.mui_nav .btn{background:#eeeeee;color:#2f4457;padding-left:8px;padding-right:8px;font-size:12px;width:18%;}
+.mui_nav.mui-table-view-cell:after{height:1px;left:0;}
+.mui_nav .btn{background:#eeeeee;color:#2f4457;padding-left:8px;padding-right:8px;font-size:12px;width:18%;border-color:#fff;}
 .mui_nav .btn:nth-child(2){width:22%;}
 .mui_nav .btn:active{background:#fff;color:#2f4457;border-color:#16b7ca;}
 .mui_nav .down{display:inline-block;border:6px solid; border-color:rgba(255,255,255,0);border-top:6px solid #757575;
@@ -22,6 +23,7 @@ html,body{width:100%;height:100%;}
     .mui_nav .btn{padding-left:3px;padding-right:3px;}
     .mui_nav .btn:nth-child(2){width:21%;}
 }
+
 .mui-table-view.list_box .mui-table-view-cell:after{left:0}
 .list_box .title{font-size:16px;color:#293c4e;}
 .list_box .progress{color:#718194;}
