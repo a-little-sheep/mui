@@ -15,7 +15,7 @@
         <span class="mui-tab-label">首页</span>
     </a>
     <a class="mui-tab-item" href="#agency">
-        <span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+        <span class="mui-icon mui-icon-email"></span>
         <span class="mui-tab-label">待办</span>
     </a>
     <a class="mui-tab-item" href="#myApp">
@@ -32,19 +32,19 @@
                 </div>
             </div>
             <div class="mui-table-view-cell mui_nav">
-                <button class="btn">省份 <i class="down"></i></button>
-                <button class="btn">负责人 <i class="down"></i></button>
-                <button class="btn">类型 <i class="down"></i></button>
-                <button class="btn">阶段 <i class="down"></i></button>
-                <button class="btn">排序 <i class="down"></i></button>
+                <button class="btn"><a class="mui-ellipsis" href="#province">省份 <i class="down"></i></a></button>
+                <button class="btn"><a class="mui-ellipsis" href="#charge">负责人 <i class="down"></i></a></button>
+                <button class="btn"><a class="mui-ellipsis" href="#type">类型 <i class="down"></i></a></button>
+                <button class="btn"><a class="mui-ellipsis" href="#stage">阶段 <i class="down"></i></a></button>
+                <button class="btn"><a class="mui-ellipsis" href="#sort">排序 <i class="down"></i></a></button>
             </div>
         </div>
         <div class="home_list">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <ul class="mui-table-view list_box">
-                        <li class="mui-table-view-cell mui-media">
-                            <a href="javascript:;">
+                        <li class="mui-table-view-cell mui-media ">
+                            <a href="#details">
                                 <div class="mui-media-object mui-pull-right">
                                     <div></div>
                                 </div>
@@ -183,7 +183,42 @@
                 </div>
             </div>
         </div>
+        <!--弹出框-->
+        <div id="province" class="mui-popover">
+            <div class="pro_box">
+                <div class="mui-popover-arrow"></div>
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell"><a href="#">Item1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="charge" class="mui-popover">
+            <div class="mui-popover-arrow"></div>
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell"><a href="#">Item1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="type" class="mui-popover"></div>
+        <div id="stage" class="mui-popover"></div>
+        <div id="sort" class="mui-popover"></div>
+        <!--详情模块-->
+        <div id="details" class="mui-page">
+            <div class="mui-page-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="agency" class="mui-control-content">
@@ -212,13 +247,74 @@
             </div>
         </div>
     </div>
-    <div id="myApp" class="mui-control-content">
+
+    <div id="myApp" class="mui-control-content mui-fullscreen">
+        <div id="app" class="mui-views">
+            <div class="mui-view">
+                <div class="mui-navbar"></div>
+                <div class="mui-pages"></div>
+            </div>
+        </div>
+        <div id="setting" class="mui-page">
+            <div class="mui-navbar-inner mui-bar mui-bar-nav">
+                <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+                    <span class="mui-icon mui-icon-left-nav"></span>
+                </button>
+                <h1 class="mui-center mui-title">设置</h1>
+            </div>
+            <div class="mui-page-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view mui-table-view-chevron">
+                            <li class="mui-table-view-cell">
+                                <a href="#notifications" class="mui-navigate-right">新消息通知</a>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="#general" class="mui-navigate-right">通用</a>
+                            </li>
+                        </ul>
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell" style="text-align: center;">
+                                <a>退出登录</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="notifications" class="mui-page">
+            <div class="mui-navbar-inner mui-bar mui-bar-nav">
+                <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+                    <span class="mui-icon mui-icon-left-nav"></span>设置
+                </button>
+                <h1 class="mui-center mui-title">新消息通知</h1>
+            </div>
+            <div class="mui-page-content">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                <a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
+                            </li>
+                        </ul>
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">
+                                通知显示消息详情
+                                <div class="mui-switch mui-active mui-switch-mini">
+                                    <div class="mui-switch-handle"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
 
 </body>
 <script src="./dist/js/mui.js"></script>
-
+<script src="./dist/js/mui.view.js"></script>
 <script src="./main.js"></script>
 </html>

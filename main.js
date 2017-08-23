@@ -19,7 +19,14 @@ mui.init({
         }
     }
 });
-
+//初始化单页view
+mui('#app').view({
+    defaultPage: '#setting'
+});
+//初始化单页的区域滚动
+mui('.mui-scroll-wrapper').scroll();
+//分享操作
+var shares = {};
 mui('.mui-bar-tab').on('tap', 'a', function(e) {
     var targetTab = this.getAttribute('href');//获取目标子页的id
     getTargetTab(targetTab);
