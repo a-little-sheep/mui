@@ -85,12 +85,6 @@ html,body {
 .mui-pages .mui-page {
     display: block;
 }
-.mui-page .mui-table-view:first-child {
-    margin-top: 15px;
-}
-.mui-page .mui-table-view:last-child {
-    margin-bottom: 30px;
-}
 .mui-ios .mui-navbar .mui-bar .mui-title {
     position: static;
 }

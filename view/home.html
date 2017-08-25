@@ -10,9 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="../dist/css/mui.min.css">
     <link rel="stylesheet" href="../dist/css/mui.view.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 
-<body class="mui-fullscreen">
+<body>
 <!--页面主结构开始-->
 <div id="app" class="mui-views">
     <div class="mui-view">
@@ -88,8 +89,8 @@
         <h1 class="mui-center mui-title">账号与安全</h1>
     </div>
     <div class="mui-page-content">
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
+        <!--<div class="mui-scroll-wrapper">-->
+            <!--<div class="mui-scroll">-->
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell">
                         <a id="head" class="mui-navigate-right">头像
@@ -116,8 +117,8 @@
                         <a>邮箱地址<span class="mui-pull-right">hbuilder@dcloud.io</span></a>
                     </li>
                 </ul>
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 <div id="notifications" class="mui-page">
@@ -208,66 +209,7 @@
     </div>
 </div>
 <div id="privacy" class="mui-page">
-    <div class="mui-navbar-inner mui-bar mui-bar-nav">
-        <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-            <span class="mui-icon mui-icon-left-nav"></span>设置
-        </button>
-        <h1 class="mui-center mui-title">隐私</h1>
-    </div>
-    <div class="mui-page-content">
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-divider">通讯录</li>
-                    <li class="mui-table-view-cell">
-                        加我为朋友时需要验证
-                        <div class="mui-switch mui-active mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        向我推荐QQ好友
-                        <div class="mui-switch mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        通过QQ号搜索到我
-                        <div class="mui-switch mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        可通过手机号搜索到我
-                        <div class="mui-switch mui-active mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        向我推荐通讯录朋友
-                        <div class="mui-switch mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-divider">开启后，为你推荐已经开通HBuilder的手机联系人</li>
-                </ul>
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        通过HBuilder账号搜索到我
-                        <div class="mui-switch mui-active mui-switch-mini">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-divider">关闭后，其他用户将不能通过HBuilder号搜索到你</li>
-                </ul>
-
-            </div>
-        </div>
-    </div>
+    123
 </div>
 
 </body>
@@ -309,8 +251,6 @@
             //				console.log(e.detail.page.id + ' back');
         });
     })(mui);
-
-
 
 </script>
 

@@ -19,12 +19,15 @@ mui.init({
         }
     }
 });
+var home_view = mui('#home_view').view({
+    defaultPage: '#project_details'
+});
 //初始化单页view
-var viewApi =mui('#app').view({
+var viewApi = mui('#myApp_view').view({
     defaultPage: '#setting'
 });
 //初始化单页的区域滚动
-mui('.mui-scroll-wrapper').scroll({});
+mui('.mui-scroll-wrapper').scroll();
 
 var view = viewApi.view;
 (function($) {
