@@ -219,25 +219,28 @@
         <!--项目详情-->
         <div id="project_details" class="mui-page">
             <div class="mui-navbar-inner mui-bar mui-bar-nav">
-                <button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+                <button type="button" class="mui-left mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left">
                     <span class="mui-icon mui-icon-left-nav"></span>
                 </button>
                 <h1 class="mui-center mui-title">项目详情</h1>
             </div>
             <div class="mui-page-content">
                 <div class="project_details_box">
-                    <div class="details_nav_box">
-                        <ul class="details_nav">
-                            <li><a href="">第一阶段</a></li>
-                            <li class="active"><a href="">第二阶段</a></li>
-                            <li><a href="">第三阶段</a></li>
-                            <li><a href="">第四阶段</a></li>
-                            <li><a href="">第五阶段</a></li>
-                            <li><a href="">第六阶段</a></li>
-                            <li><a href="">第七阶段</a></li>
-                            <li><a href="">第八阶段</a></li>
-                        </ul>
+                    <div class="bottom_border">
+                        <div class="details_nav_box">
+                            <ul class="details_nav">
+                                <li><a href="">第一阶段</a></li>
+                                <li class="active"><a href="">第二阶段</a></li>
+                                <li><a href="">第三阶段</a></li>
+                                <li><a href="">第四阶段</a></li>
+                                <li><a href="">第五阶段</a></li>
+                                <li><a href="">第六阶段</a></li>
+                                <li><a href="">第七阶段</a></li>
+                                <li><a href="">第八阶段</a></li>
+                            </ul>
+                        </div>
                     </div>
+                    <!--项目名称-->
                     <div class="mui-card">
                         <div class="mui-card-content project_name">
                             <div class="mui-card-content-inner">
@@ -246,14 +249,95 @@
                             </div>
                         </div>
                     </div>
+                    <!--项目进度-->
                     <div class="mui-card">
-                        <div class="mui-card-content project_name">
+                        <div class="mui-card-content">
                             <div class="mui-card-content-inner">
-                                <p class="pro_progress">项目进度：<p class="mui-progressbar mui-progressbar-success" data-progress="20"><span style="transform: translate3d(-80%, 0px, 0px);"></span></p></p>
-                                <p class="stage_progress">第二阶段：</p>
+                                <p class="pro_progress pro_module">
+                                    <span class="pro_title">项目进度</span>
+                                    <span class="mui-progressbar mui-progressbar-success" data-progress="20">
+                                        <span style="transform: translate3d(-80%, 0px, 0px);"></span>
+                                    </span>
+                                    <span class="pro_gressbar_number">20%</span>
+                                </p>
+                                <p class="stage_progress pro_module">
+                                    <span class="pro_title">第二阶段</span>
+                                    <span class="mui-progressbar mui-progressbar-success" data-progress="20">
+                                        <span style="transform: translate3d(-80%, 0px, 0px);"></span>
+                                    </span>
+                                    <span class="pro_gressbar_number">20.67%</span>
+                                </p>
                             </div>
                         </div>
                     </div>
+                    <!--省份-->
+                    <div class="mui-card">
+                        <div class="mui-card-content">
+                            <div class="mui-card-content-inner">
+                                <p class="pro_module mui-ellipsis">
+                                    <span class="pro_title">省份城市</span>
+                                    <span class="pro_content">湖北省东风县<span class="mui-pull-right">独立影像中心</span></span>
+                                </p>
+                                <p class="pro_module mui-ellipsis">
+                                    <span class="pro_title">负责人</span>
+                                    <span class="pro_content">陈涛 <a href="tel:18330828878"><i class="mui-icon mui-icon-phone-filled"></i></a></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--预计开发完成-->
+                    <div class="mui-card">
+                        <div class="mui-card-content">
+                            <div class="mui-card-content-inner">
+                                <p class="pro_module">
+                                    <span class="pro_title">创建时间</span>
+                                    <span class="pro_content">2017-08-04 10:06</span>
+                                </p>
+                                <p class="pro_module">
+                                    <span class="pro_title">预计开发完成</span>
+                                    <span class="pro_content">2017-12-15 12:00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--项目描述-->
+                    <div class="mui-card pro_describe">
+                        <div class="mui-card-content">
+                            <div class="mui-card-content-inner">
+                                <p class="pro_module">
+                                    <span class="pro_title">项目描述</span>
+                                    <span class="pro_content">三甲医院年收入7.6亿，独立影像中心，新增PET/MR、PET/CT、ICT、16CT，托管医院原有的3.0T、1.5T、64CT、2台DR，场地考察</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--项目阶段-->
+                    <div class="mui-card pro_stage">
+                        <div class="mui-card-header">第一阶段:项目立项 <span class="mui-pull-right">0.98%</span></div>
+                        <div class="mui-card-content">
+                            <ul class="mui-card-content-inner">
+                                <li>
+                                    <span class="left_icon"></span>
+                                    <span class="pro_department">吉林省区总经办</span>
+                                    <span class="mui-pull-right pro_dep_head">黄俊杰
+                                    <a href="tel:18330828878">
+                                        <i class="mui-icon mui-icon-phone-filled"></i>
+                                    </a>
+                                </span>
+                                </li>
+                                <li class="mui-table-view-cell mui-checkbox mui-left">
+                                    <input name="checkbox" type="checkbox"> 填写立项申请单给市场中心
+                                </li>
+                                <li class="mui-table-view-cell mui-left pro_file">
+                                    <a href="">
+                                        <div class="file-icon excel-icon pdf-icon img-icon ppt-icon nofile-icon word-icon noshow-icon"></div>
+                                        <span class="file_name">立项申请单立项申请单立项申请单立项申请单立项申请单</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
