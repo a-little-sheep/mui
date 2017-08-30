@@ -17,7 +17,7 @@ mui.init({
                 //1 表示没有数据了  0 表示还有数据
             }
         }
-    }
+    },swipeBack: true //启用右滑关闭功能
 });
 var home_view = mui('#home_view').view({
     defaultPage: '#project_details'
@@ -65,6 +65,97 @@ mui('.mui-bar-tab').on('tap', 'a', function(e) {
 function getTargetTab(url) {
 
 }
+
+
+/*mui('#task_panel').on('tap','#upload_file_btn',function(){
+    viewApi.go('#upload_file');
+ });*/
+
+/*悬浮球*/
+var div1 = document.getElementById('touch');
+var div2 = document.getElementById('touch_stage');
+var viewWidth = window.screen.width;
+var viewHeight = window.screen.height;
+var div1Width = parseInt(div1.offsetWidth);
+var div1Height = parseInt(div1.offsetHeight);
+var div2Width = parseInt(div2.offsetWidth);
+var div2Height = parseInt(div2.offsetHeight);
+
+div1.addEventListener('touchmove', function(event) {
+    event.preventDefault(); //阻止其他事件
+    // 如果这个元素的位置内只有一个手指的话
+    if(event.targetTouches.length == 1) {
+        var touch = event.targetTouches[0]; // 把元素放在手指所在的位置
+        touchMove(div1,div1Width,div1Height,touch);
+    }
+}, false);
+div2.addEventListener('touchmove', function(event) {
+    event.preventDefault(); //阻止其他事件
+    // 如果这个元素的位置内只有一个手指的话
+    if(event.targetTouches.length == 1) {
+        var touch = event.targetTouches[0]; // 把元素放在手指所在的位置
+        touchMove(div2,div2Width,div2Height,touch);
+    }
+}, false);
+
+function touchMove(div,divWidth,divHeight,touch) {
+
+    var tempWidth = touch.pageX;//存储x坐标
+    var tempHeigth = touch.pageY;//存储Y坐标
+    var scrollTop = window.pageYOffset; //页面滑区的高度，document.body.scrollTop也可以获取划区的高度,
+    tempHeigth-= scrollTop;
+    if((tempWidth + divWidth) > viewWidth) {//超越右边界
+        tempWidth = viewWidth - divWidth/2;
+    }
+    if((tempHeigth + divHeight) > viewHeight) {//超越下边界
+        tempHeigth = viewHeight - divHeight/2;
+    }
+    if((tempWidth - divWidth)<0){//超越左边界
+        tempWidth=divWidth/2;
+    }
+    if((tempHeigth - divHeight)<0){//超越上边界
+        tempHeigth=divHeight/2;
+    }
+
+    div.style.left = tempWidth - divWidth/2 + 'px';
+    div.style.top = tempHeigth - divWidth/2 + 'px';
+}
+
+/*任务提交和去除*/
+mui('#project_details').on('change', '.task_icon', function(e) {
+    console.log(e);
+    var _this = this;
+    var type = this.checked;
+    mui.confirm('您是否要提交任务？', '温馨提示', ['是', '否'], function(e) {
+        if (e.index == 0) {
+            _this.checkout = true;
+        }else{
+            if(type){
+                _this.checked = false;
+            }else{
+                _this.checked = true;
+            }
+
+        }
+    });
+});
+
+
+mui('#project_tree').on('tap','.task_name',function(e){
+    //var task_id = this.getAttribute('data-taskid');
+    //viewApi.go('#task_panel');return false;
+    console.log(1);
+});
+
+
+
+
+
+
+
+
+
+
 
 
 

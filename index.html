@@ -226,20 +226,6 @@
             </div>
             <div class="mui-page-content">
                 <div class="project_details_box">
-                    <div class="bottom_border">
-                        <div class="details_nav_box">
-                            <ul class="details_nav">
-                                <li><a href="">第一阶段</a></li>
-                                <li class="active"><a href="">第二阶段</a></li>
-                                <li><a href="">第三阶段</a></li>
-                                <li><a href="">第四阶段</a></li>
-                                <li><a href="">第五阶段</a></li>
-                                <li><a href="">第六阶段</a></li>
-                                <li><a href="">第七阶段</a></li>
-                                <li><a href="">第八阶段</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <!--项目名称-->
                     <div class="mui-card">
                         <div class="mui-card-content project_name">
@@ -326,19 +312,69 @@
                                 </span>
                                 </li>
                                 <li class="mui-table-view-cell mui-checkbox mui-left">
-                                    <input name="checkbox" type="checkbox"> 填写立项申请单给市场中心
+                                    <input name="checkbox" type="checkbox" class="task_icon">
+                                    <label><span class="task_name">填写立项申请单给市场中心</span></label>
                                 </li>
                                 <li class="mui-table-view-cell mui-left pro_file">
                                     <a href="">
                                         <div class="file-icon excel-icon pdf-icon img-icon ppt-icon nofile-icon word-icon noshow-icon"></div>
-                                        <span class="file_name">立项申请单立项申请单立项申请单立项申请单立项申请单</span>
+                                        <span class="file_name">立项申请单</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <!--悬浮球1-->
+                    <div id="touch"><a href="#touch_file"><i class="mui-icon-extra mui-icon-extra-class"></i></a></div>
+                    <div id="touch_file" class="mui-popover">
+                        <div class="pro_box">
+                            <div class="mui-popover-arrow"></div>
+                            <div class="mui-scroll-wrapper">
+                                <div class="mui-scroll">
+                                    <ul class="mui-table-view">
+                                        <li class="mui-table-view-cell"><a class="active" href="#">项目路径表</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">立项申请单</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">项目状况表</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--悬浮球2-->
+                    <div id="touch_stage"><a href="#stage_list"><i class="mui-icon mui-icon-bars"></i></a></div>
+                    <div id="stage_list" class="mui-popover">
+                        <div class="pro_box">
+                            <div class="mui-popover-arrow"></div>
+                            <div class="mui-scroll-wrapper">
+                                <div class="mui-scroll">
+                                    <ul class="mui-table-view">
+                                        <li class="mui-table-view-cell"><a class="active" href="#">第一阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第二阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第三阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第四阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第五阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第六阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第七阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第八阶段</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+            </div>
+        </div>
+        <!--上传文件和留言-->
+        <div id="task_panel" class="mui-page">
+            <div class="mui-navbar-inner mui-bar mui-bar-nav">
+                <button type="button" class="mui-left mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left">
+                    <span class="mui-icon mui-icon-left-nav"></span>
+                </button>
+                <h1 class="mui-center mui-title">上传文件和留言</h1>
+            </div>
+            <div class="mui-page-content">
+                <p style="margin-top:100px;text-align:center;">上传文件和留言</p>
             </div>
         </div>
         <!--弹出框-->
