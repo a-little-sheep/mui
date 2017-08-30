@@ -141,10 +141,9 @@ mui('#project_details').on('change', '.task_icon', function(e) {
 });
 
 
-mui('#project_tree').on('tap','.task_name',function(e){
+mui('#project_details').on('tap','.task_name',function(e){
     //var task_id = this.getAttribute('data-taskid');
-    //viewApi.go('#task_panel');return false;
-    console.log(1);
+    viewApi.go('#task_panel');return false;
 });
 
 
