@@ -20,41 +20,50 @@ mui.init({
     },swipeBack: true //启用右滑关闭功能
 });
 var home_view = mui('#home_view').view({
-    defaultPage: '#project_details'
+    defaultPage: '#home_oneView'
 });
+/*task_panel,home_oneView*/
 //初始化单页view
-var viewApi = mui('#myApp_view').view({
+var myApp_view = mui('#myApp_view').view({
     defaultPage: '#setting'
 });
 //初始化单页的区域滚动
 mui('.mui-scroll-wrapper').scroll();
-
-var view = viewApi.view;
+var view1 = home_view.view;
+var view2 = myApp_view.view;
 (function($) {
     //处理view的后退与webview后退
     var oldBack = $.back;
     $.back = function() {
+        viewBack(home_view);
+        viewBack(myApp_view);
+    };
+    viewEvent(view1);
+    viewEvent(view2);
+    function viewBack(viewApi) {
         if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
             viewApi.back();
-        } else { //执行webview后退
-            oldBack();
         }
-    };
-    //监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
-    //第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
-    view.addEventListener('pageBeforeShow', function(e) {
-        console.log(1);
-    });
-    view.addEventListener('pageShow', function(e) {
-        console.log(2);
-    });
-    view.addEventListener('pageBeforeBack', function(e) {
-        console.log(3);
-    });
-    view.addEventListener('pageBack', function(e) {
-        console.log(4);
-        //console.log(e.detail.page.id + ' back');
-    });
+    }
+    function viewEvent(event) {
+        //监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+        //第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+        event.addEventListener('pageBeforeShow', function(e) {
+            document.getElementsByClassName("mui-bar-tab")[0].style.display='none';
+        });
+        event.addEventListener('pageShow', function(e) {
+            console.log(2);
+        });
+        event.addEventListener('pageBeforeBack', function(e) {
+            alert("1");
+            document.getElementsByClassName("mui-bar-tab")[0].style.display='block';
+        });
+        event.addEventListener('pageBack', function(e) {
+            console.log(4);
+            //console.log(e.detail.page.id + ' back');
+        });
+    }
+
 })(mui);
 
 mui('.mui-bar-tab').on('tap', 'a', function(e) {
@@ -62,26 +71,21 @@ mui('.mui-bar-tab').on('tap', 'a', function(e) {
     getTargetTab(targetTab);
 });
 
-function getTargetTab(url) {
-
-}
 
 
-/*mui('#task_panel').on('tap','#upload_file_btn',function(){
-    viewApi.go('#upload_file');
- });*/
+
 
 /*悬浮球*/
 var div1 = document.getElementById('touch');
 var div2 = document.getElementById('touch_stage');
 var viewWidth = window.screen.width;
 var viewHeight = window.screen.height;
-var div1Width = parseInt(div1.offsetWidth);
-var div1Height = parseInt(div1.offsetHeight);
-var div2Width = parseInt(div2.offsetWidth);
-var div2Height = parseInt(div2.offsetHeight);
+
+
 
 div1.addEventListener('touchmove', function(event) {
+    var div1Width = parseInt(div1.offsetWidth);
+    var div1Height = parseInt(div1.offsetHeight);
     event.preventDefault(); //阻止其他事件
     // 如果这个元素的位置内只有一个手指的话
     if(event.targetTouches.length == 1) {
@@ -90,6 +94,8 @@ div1.addEventListener('touchmove', function(event) {
     }
 }, false);
 div2.addEventListener('touchmove', function(event) {
+    var div2Width = parseInt(div2.offsetWidth);
+    var div2Height = parseInt(div2.offsetHeight);
     event.preventDefault(); //阻止其他事件
     // 如果这个元素的位置内只有一个手指的话
     if(event.targetTouches.length == 1) {
@@ -98,13 +104,14 @@ div2.addEventListener('touchmove', function(event) {
     }
 }, false);
 
-function touchMove(div,divWidth,divHeight,touch) {
 
+function touchMove(div,divWidth,divHeight,touch) {
     var tempWidth = touch.pageX;//存储x坐标
     var tempHeigth = touch.pageY;//存储Y坐标
     var scrollTop = window.pageYOffset; //页面滑区的高度，document.body.scrollTop也可以获取划区的高度,
     tempHeigth-= scrollTop;
-    if((tempWidth + divWidth) > viewWidth) {//超越右边界
+    console.log(divWidth);
+    if((tempWidth + divWidth) >= viewWidth) {//超越右边界
         tempWidth = viewWidth - divWidth/2;
     }
     if((tempHeigth + divHeight) > viewHeight) {//超越下边界
@@ -120,6 +127,12 @@ function touchMove(div,divWidth,divHeight,touch) {
     div.style.left = tempWidth - divWidth/2 + 'px';
     div.style.top = tempHeigth - divWidth/2 + 'px';
 }
+/*打开项目详情*/
+mui('#home_oneView').on('tap','.open_project',function(e){
+    //var task_id = this.getAttribute('data-taskid');
+    home_view.go('#project_details');
+    return false;
+});
 
 /*任务提交和去除*/
 mui('#project_details').on('change', '.task_icon', function(e) {
@@ -140,10 +153,11 @@ mui('#project_details').on('change', '.task_icon', function(e) {
     });
 });
 
-
+/*打开项目上传文件和信息*/
 mui('#project_details').on('tap','.task_name',function(e){
     //var task_id = this.getAttribute('data-taskid');
-    viewApi.go('#task_panel');return false;
+    home_view.go('#task_panel');
+    return false;
 });
 
 
