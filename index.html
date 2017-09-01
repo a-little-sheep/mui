@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="./index.css">
 <body>
 <!--头部导航-->
-<nav class="mui-bar mui-bar-tab">
+<nav class="mui-bar mui-bar-tab" id="footerNav">
     <a class="mui-tab-item mui-active" href="#home">
         <span class="mui-icon mui-icon-home"></span>
         <span class="mui-tab-label">首页</span>
@@ -349,14 +349,10 @@
                             <div class="mui-scroll-wrapper">
                                 <div class="mui-scroll">
                                     <ul class="mui-table-view">
-                                        <li class="mui-table-view-cell"><a class="active" href="#">第一阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第二阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第三阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第四阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第五阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第六阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第七阶段</a></li>
-                                        <li class="mui-table-view-cell"><a href="#">第八阶段</a></li>
+                                        <li class="mui-table-view-cell"><a class="active" href="#">第一阶段</a><a href="#">第二阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第三阶段</a><a href="#">第四阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第五阶段</a><a href="#">第六阶段</a></li>
+                                        <li class="mui-table-view-cell"><a href="#">第七阶段</a><a href="#">第八阶段</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -376,14 +372,13 @@
             <div class="mui-page-content">
                 <div class="file_news_box">
                     <div id="slider" class="mui-slider">
-                        <div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                        <div class="mui-segmented-control mui-segmented-control-inverted">
                             <a class="mui-control-item mui-active" href="#newsMobile">查看留言</a>
                             <a class="mui-control-item" href="#fileMobile">文件上传</a>
                         </div>
-                        <div class="mui-slider-progress-bar mui-col-xs-6"></div>
-                        <div class="mui-slider-group">
+                        <div class="slider-group">
                             <!--发布消息-->
-                            <div id="newsMobile" class="mui-slider-item mui-control-content mui-active" style="overflow-y:auto;">
+                            <div id="newsMobile" class="slider-item mui-control-content mui-active" style="overflow-y:auto;">
                                 <div class="mui-scroll">
                                     <ul class="mui-table-view">
                                           <li class="mui-table-view-cell mui-card">
@@ -502,16 +497,48 @@
                                 </div>
                             </div>
                             <!--上传文件-->
-                            <div id="fileMobile" class="mui-slider-item mui-control-content">
+                            <div id="fileMobile" class="slider-item mui-control-content">
                                 <div id="scroll2" class="mui-scroll-wrapper">
                                     <div class="mui-scroll">
-
+                                        <div class="mui-input-group mui-card">
+                                            <label>文件名称</label>
+                                            <input type="text" class="mui-input-text">
+                                        </div>
+                                        <div class="mui-input-group mui-card">
+                                            <label>文件描述</label>
+                                            <textarea rows="4" class="mui-input-text"></textarea>
+                                        </div>
+                                        <div class="mui-input-group mui-card">
+                                            <label>附件</label>
+                                            <div class="file_box">
+                                                <ul class="file_list">
+                                                    <li class="mui-media">
+                                                        <div class="del_file mui-pull-right">
+                                                            <i class="mui-icon mui-icon-trash"></i>
+                                                        </div>
+                                                        <div class="mui-media-body">
+                                                            <p class="file_name">分宜县人民医院.jpg</p>
+                                                            <p class="mui-ellipsis">
+                                                                <span class="mui-progressbar mui-progressbar-success" data-progress="20">
+                                                                    <span style="transform: translate3d(-80%, 0px, 0px);"></span>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="upload_file_btn" id="upload_file"><i class="mui-icon mui-icon-plusempty"></i></div>
+                                                <div class="file_sub_btn_box mui-text-center">
+                                                    <button class="mui-btn mui-btn-primary">返回</button>
+                                                    <span style="padding:0 10px;"></span>
+                                                    <button class="mui-btn mui-btn-primary">提交</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -646,5 +673,7 @@
 </body>
 <script src="./dist/js/mui.min.js"></script>
 <script src="./dist/js/mui.view.js"></script>
+<script src="./dist/js/jquery.min.js"></script>
+<script src="./dist/js/webuploader.js"></script>
 <script src="./main.js"></script>
 </html>

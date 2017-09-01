@@ -40,7 +40,7 @@ body{-webkit-overflow-scrolling:touch;}
 #home .mui-bar-nav{background-color:#f0f0f0;}
 #home .mui-page-content{background-color:#f3f3f3;}
 #home .mui-title,#home .mui-icon-left-nav{color:#2f4457;}
-#home .project_details_box{padding-top:44px;padding-bottom:60px;}
+#home .project_details_box{padding-top:44px;}
 
 #home .project_name .pro_name{font-size:16px;color:#293c4e;}
 #home .project_name .pro_update{font-size:14px;color:#8391a2;}
@@ -69,7 +69,7 @@ body{-webkit-overflow-scrolling:touch;}
 .mui-icon{font-size:21px;color:#5E6D82;}
 .pro_stage .mui-table-view-cell{color:#5E6D82;}
 .pro_stage .mui-table-view-cell.task_checked{color:#A0A0A0;}
-.pro_stage .mui-table-view-cell.mui-checkbox.mui-left{width:100%;padding-right:0;padding-left:50px;}
+.pro_stage .mui-table-view-cell.mui-checkbox.mui-left{width:100%;padding:0;padding-left:50px;}
 .pro_stage .mui-table-view-cell:after{height:0;}
 .pro_stage .mui-table-view-cell input[type='checkbox']:before{font-size:24px;}
 
@@ -95,12 +95,13 @@ body{-webkit-overflow-scrolling:touch;}
 #touch_file .mui-table-view-cell:after,#stage_list .mui-table-view-cell:after{right:15px;}
 #touch_file a,#stage_list a{text-align:center;color:#243445;}
 #touch_file a.active,#stage_list a.active{color:#1E80E8;}
-#stage_list{width:180px;height:190px;}
+#stage_list{width:226px;height:192px;}
+#stage_list a{display:inline-block;margin:-12px 0;}
 #touch_file,#stage_list{z-index:99999;}
 
 #project_details .mui-checkbox input[type='checkbox']:checked:before{color:#CBCBCB;}
 #project_details .mui-card{-webkit-box-shadow: 0 1px 2px rgba(1,1,1,.1);box-shadow: 0 1px 2px rgba(1,1,1,.1);}
-#project_details .mui-table-view-cell label{padding:0;}
+#project_details .mui-table-view-cell label{padding:10px 0;}
 #project_details .mui-popover{position:fixed;}
 .mui-page-content{overflow:auto;}
 .
@@ -108,10 +109,19 @@ body{-webkit-overflow-scrolling:touch;}
 #home_view .mui-action-back{color:#334251;}
 
 .file_news_box{height:100%;padding-top:44px;}
+
 #slider{height:100%;padding-bottom:35px;}
-#slider .mui-slider-group{height:100%;}
-#home_view .mui-slider-group .mui-slider-item{border-bottom:0;}
-#home_view .mui-slider-group .mui-scroll{height:100%;padding-bottom:58px;overflow-y:auto;}
+#slider .slider-group{height:100%;}
+#home_view .slider-group .mui-slider-item{border-bottom:0;}
+#home_view .slider-group .mui-scroll{height:100%;padding-bottom:58px;overflow-y:auto;}
+#home_view .slider-group .slider-item{font-size: 14px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    white-space: normal;}
+#home_view .mui-table-view:after{height:0;}
+#home_view .mui-table-view:before{height:0;}
 #newsMobile .mui-scroll,#newsMobile .mui-table-view,#newsMobile .mui-scroll-wrapper{background-color:#f3f3f3;}
 #newsMobile .mui-table-view-cell:after{height:0;}
 .news_state{width:6px;height:6px;display:inline-block;border-radius:50%;vertical-align:middle;margin-right:6px;}
@@ -119,7 +129,7 @@ body{-webkit-overflow-scrolling:touch;}
 #newsMobile .mui-slider-handle{color:#666666;}
 #newsMobile .mui-slider-handle .news_content{color:#333333;padding-left:12px;}
 #newsMobile .mui-btn-red{background-color:#FF4949;}
-.leave_message{position:absolute;bottom:5px;left:0;width:100%;height:55px;background:#fff;z-index:99999;padding:10px;padding-right:55px;
+.leave_message{position:absolute;bottom:0;left:0;width:100%;height:55px;background:#fff;z-index:99999;padding:10px;padding-right:55px;
     -webkit-box-shadow:1px 0 5px rgba(1,1,1,.2);
     -moz-box-shadow: 1px 0 5px rgba(1,1,1,.2);
     box-shadow: 1px 0 5px rgba(1,1,1,.2);}
@@ -128,6 +138,43 @@ body{-webkit-overflow-scrolling:touch;}
 
 
 /*文件*/
+#fileMobile .mui-scroll-wrapper, .mui-scroll{background-color:#f3f3f3;}
+#fileMobile .mui-input-group{background-color:#f3f3f3;box-shadow:none;-webkit-box-shadow:none;}
+#fileMobile .mui-input-group:after{height:0;}
+#fileMobile .mui-input-group:before{height:0;}
+#fileMobile .mui-input-group label{font-size:14px;}
+#fileMobile .mui-input-text{background:#fff;border:1px solid #DEDEDE;border-radius:3px;margin-top:10px;font-size:14px;}
+
+.upload_file_btn{width:60px;height:60px;border:1px dashed #DEDEDE;cursor:pointer;margin-top:10px;text-align:center;}
+.upload_file_btn .mui-icon{font-size:42px;line-height:58px;}
+.file_list .mui-media{margin-top:8px;}
+.del_file{height:30px;}
+.del_file .mui-icon{font-size:26px;}
+.file_list .mui-ellipsis{margin-top:3px;}
+.file_list .mui-progressbar{height:6px;}
+.file_list .mui-media-body{width:90%;}
+.file_list .file_name{color:#333333;margin-bottom:5px;}
+.file_sub_btn_box{margin-top:30px;}
+
+
+#fileMobile .webuploader-container {
+    position:relative;
+}
+#fileMobile .webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+    left:1px;
+}
+#fileMobile .webuploader-pick{
+    position: relative;
+    display: inline-block;
+}
+
+#fileMobile .webuploader-pick-disable {
+    opacity: 0.6;
+    pointer-events:none;
+}
 
 
 
@@ -139,7 +186,14 @@ body{-webkit-overflow-scrolling:touch;}
 
 
 
-#agency .mui-card-content-inner{padding-bottom:0;}
+
+
+
+
+
+
+
+ #agency .mui-card-content-inner{padding-bottom:0;}
 #agency .mui-card{border-radius:4px 4px 0 0;}
 #agency .mui-card-header{background-color:#16B7CA;color:#fff;}
 #agency .hospital_name{color:#2f4457;font-size:18px;}

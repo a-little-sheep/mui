@@ -1,3 +1,12 @@
+//实现ios平台原生侧滑关闭页面；
+if (mui.os.plus && mui.os.ios) {
+    mui.plusReady(function() { //5+ iOS暂时无法屏蔽popGesture时传递touch事件，故该demo直接屏蔽popGesture功能
+        plus.webview.currentWebview().setStyle({
+            'popGesture': 'none'
+        });
+    });
+}
+
 mui.init({
     pullRefresh : {
         container:".home_list .mui-scroll-wrapper",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -49,18 +58,21 @@ var view2 = myApp_view.view;
         //监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
         //第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
         event.addEventListener('pageBeforeShow', function(e) {
-            document.getElementsByClassName("mui-bar-tab")[0].style.display='none';
+            var name = e.detail.page.id;
+            if(name === 'home_oneView'){
+                document.getElementById("footerNav").style.display ='block';
+            }else{
+                document.getElementById("footerNav").style.display = 'none';
+            }
         });
         event.addEventListener('pageShow', function(e) {
-            console.log(2);
+
         });
         event.addEventListener('pageBeforeBack', function(e) {
-            alert("1");
-            document.getElementsByClassName("mui-bar-tab")[0].style.display='block';
+
         });
         event.addEventListener('pageBack', function(e) {
-            console.log(4);
-            //console.log(e.detail.page.id + ' back');
+
         });
     }
 
@@ -68,7 +80,6 @@ var view2 = myApp_view.view;
 
 mui('.mui-bar-tab').on('tap', 'a', function(e) {
     var targetTab = this.getAttribute('href');//获取目标子页的id
-    getTargetTab(targetTab);
 });
 
 
@@ -158,6 +169,45 @@ mui('#project_details').on('tap','.task_name',function(e){
     //var task_id = this.getAttribute('data-taskid');
     home_view.go('#task_panel');
     return false;
+});
+mui('#task_panel').on('tap','a',function(e){
+   if(e.detail.target.hash === '#fileMobile'){
+        /*文件上传*/
+        var uploader = WebUploader.create({
+            // swf文件路径
+            swf: '/static/js/plugins/webuploader/Uploader.swf',
+            // 文件接收服务端。
+            server: '/project/index/upload_submit',
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: '#upload_file',
+            resize : false,// 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+            chunked : false, // 是否分片
+            duplicate : true,//去重， 根据文件名字、文件大小和最后修改时间来生成hash Key.
+            chunkSize : 52428 * 100, // 分片大小， 5M
+            auto : true,
+            sendAsBinary : true
+        });
+        //文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on('fileQueued', function(file){
+
+        });
+        //文件上传过程中创建进度条实时显示
+        uploader.on('uploadProgress', function(file,percentage){
+            //mui('#file_progress_bar').progressbar().setProgress(percentage * 100);
+        });
+        //当文件上传成功时触发
+        uploader.on( 'uploadSuccess', function(file,response){
+            if(response.status == 1){
+
+            }
+        });
+        //当文件上传出错时触发
+        uploader.on( 'uploadError', function(file,reason){
+            mui.toast('上传失败，请重新上传');
+            return false;
+        });
+   }
 });
 
 
